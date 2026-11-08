@@ -16,9 +16,9 @@ export const PERSONAL_INFO: PersonalInfo = {
   phoneRaw: '+918891580990',
   email: 'adharshkattaikonam@gmail.com',
   // Configure actual profile URLs here when available
-  linkedinUrl: 'https://linkedin.com/in/your-profile',
-  githubUrl: 'https://github.com/your-profile',
-  leetcodeUrl: 'https://leetcode.com/u/your-profile',
+  linkedinUrl: 'https://www.linkedin.com/in/adharsh--s/',
+  githubUrl: 'https://github.com/Adharshs07',
+  leetcodeUrl: 'https://leetcode.com/u/SOWEzQH3XY/',
   location: 'Trivandrum, Kerala',
   bioShort:
     'Full Stack Developer specializing in MERN Stack, Clean Architecture, real-time communications, and scalable distributed systems.',
@@ -293,34 +293,6 @@ export const MINI_PROJECTS: Project[] = [
 ];
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
-  {
-    id: 'brototype',
-    title: 'Full Stack Engineering Trainee (MERN Stack)',
-    company: 'Brototype',
-    period: '2024 — 2026',
-    location: 'Trivandrum, Kerala',
-    type: 'Production-Simulation & Intensive Engineering',
-    description:
-      'Underwent intensive software engineering immersion focused on architecting and delivering production-ready, full-stack enterprise web systems.',
-    highlights: [
-      'Engineered monolithic and micro-service style applications implementing Clean Architecture, SOLID principles, and the Repository Pattern.',
-      'Mastered scalable Node.js/Express backends, MongoDB aggregation pipelines, PostgreSQL relational modeling, and RESTful API standards.',
-      'Built real-time applications with Socket.IO WebSockets and WebRTC audio/video streaming under simulated agile team environments.',
-      'Deployed production services to AWS EC2 using Nginx reverse proxy, PM2 process supervision, SSL automation, and AWS S3 media pipelines.',
-    ],
-    technologies: [
-      'React',
-      'Next.js',
-      'TypeScript',
-      'Node.js',
-      'Express',
-      'MongoDB',
-      'PostgreSQL',
-      'AWS',
-      'Socket.IO',
-      'Docker',
-    ],
-  },
   {
     id: 'freelance',
     title: 'Independent Full Stack Developer',
