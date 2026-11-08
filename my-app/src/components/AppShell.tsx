@@ -12,6 +12,7 @@ import ExperienceSection from '@/components/sections/ExperienceSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
+import ThemeToggle from '@/components/ThemeToggle';
 import { ArrowUpRight, Compass, LayoutGrid } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 
@@ -90,12 +91,12 @@ export default function AppShell() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#050816] text-[#F1F5F9] selection:bg-cyan-500/30 selection:text-white flex flex-col justify-between overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#f8fafc] dark:bg-[#050816] text-[#0f172a] dark:text-[#F1F5F9] selection:bg-cyan-500/30 selection:text-slate-900 dark:selection:text-white flex flex-col justify-between overflow-x-hidden transition-colors duration-300">
       {/* 1. PERSISTENT ANIMATED CUBES GRID BACKGROUND */}
       <CubesGridBackground />
 
       {/* 2. PERSISTENT TOP APPLICATION HEADER */}
-      <header className="sticky top-0 left-0 right-0 z-40 bg-[#050816]/80 backdrop-blur-md border-b border-cyan-500/15 py-3 px-4 sm:px-6">
+      <header className="sticky top-0 left-0 right-0 z-40 bg-[#f8fafc]/85 dark:bg-[#050816]/85 backdrop-blur-md border-b border-slate-200/80 dark:border-cyan-500/15 py-3 px-4 sm:px-6 transition-colors duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Brand Logo & Active Section Indicator */}
           <div className="flex items-center gap-3 sm:gap-4">
@@ -104,37 +105,40 @@ export default function AppShell() {
               className="flex items-center gap-2.5 group cursor-pointer"
               aria-label="Adharsh S Home"
             >
-              <div className="w-8 h-8 rounded-xl bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center font-display font-black text-xs text-cyan-300 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all">
+              <div className="w-8 h-8 rounded-xl bg-cyan-100/70 dark:bg-cyan-950/80 border border-cyan-300/60 dark:border-cyan-500/30 flex items-center justify-center font-display font-black text-xs text-cyan-800 dark:text-cyan-300 group-hover:border-cyan-500 dark:group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all">
                 AS
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xs font-bold font-display text-slate-100 group-hover:text-cyan-300 transition-colors">
+                <span className="text-xs font-bold font-display text-slate-800 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                   {PERSONAL_INFO.name}
                 </span>
-                <span className="text-[10px] font-mono text-cyan-400/80">
+                <span className="text-[10px] font-mono text-cyan-700 dark:text-cyan-400/80 font-medium">
                   {SECTION_TITLES[activeSection]}
                 </span>
               </div>
             </button>
           </div>
 
-          {/* Quick Actions (Mode Switcher & Let's Talk CTA) */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Quick Actions (Theme Toggle, View Mode Switcher & Let's Talk CTA) */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Theme Toggle Button (Light & Dark Mode) */}
+            <ThemeToggle />
+
             {/* View Mode Toggle: Cinematic App Mode vs Full Scroll Mode */}
             <button
               type="button"
               onClick={() => setIsScrollMode(!isScrollMode)}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-[11px] font-mono text-slate-300 hover:text-cyan-300 transition-all cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 text-[11px] font-mono text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 hover:border-cyan-400 dark:hover:border-cyan-500/40 transition-all cursor-pointer shadow-xs"
               title="Toggle between cinematic interactive app mode and full scroll mode"
             >
               {isScrollMode ? (
                 <>
-                  <LayoutGrid className="w-3.5 h-3.5 text-cyan-400" />
+                  <LayoutGrid className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
                   <span>Cinematic View</span>
                 </>
               ) : (
                 <>
-                  <Compass className="w-3.5 h-3.5 text-cyan-400" />
+                  <Compass className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
                   <span>Full Scroll View</span>
                 </>
               )}
@@ -143,7 +147,7 @@ export default function AppShell() {
             {/* Let's Talk CTA */}
             <button
               onClick={() => navigateTo('contact')}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 text-xs font-bold transition-all shadow-[0_0_15px_rgba(34,211,238,0.3)] active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] active:scale-95 cursor-pointer"
             >
               <span>Let&apos;s Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -166,7 +170,7 @@ export default function AppShell() {
             <section id="contact"><ContactSection /></section>
           </div>
         ) : (
-          /* Cinematic Single-Page Application Shell (Strict Requirement #1 & #8) */
+          /* Cinematic Single-Page Application Shell */
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={activeSection}
@@ -189,7 +193,7 @@ export default function AppShell() {
         )}
       </main>
 
-      {/* 4. PERSISTENT FLOATING NAVIGATION DOCK (Aceternity style) */}
+      {/* 4. PERSISTENT FLOATING NAVIGATION DOCK */}
       <FloatingDock
         activeSection={activeSection}
         onSelectSection={navigateTo}

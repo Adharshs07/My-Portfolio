@@ -40,10 +40,10 @@ export default function SkillsSection() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all shrink-0 cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-mono transition-all shrink-0 cursor-pointer shadow-xs ${
               activeTab === tab
-                ? 'bg-cyan-500 text-slate-950 font-bold shadow-[0_0_20px_rgba(34,211,238,0.5)]'
-                : 'bg-slate-900/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800 border border-slate-800'
+                ? 'bg-cyan-500 text-slate-950 font-bold shadow-[0_0_20px_rgba(6,182,212,0.5)]'
+                : 'bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
             }`}
           >
             {tab}
@@ -63,20 +63,20 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="p-6 rounded-2xl glass-panel-glow border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] flex flex-col justify-between"
+              className="p-6 rounded-3xl glass-panel-glow border border-slate-200/90 dark:border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] flex flex-col justify-between"
             >
               <div>
                 {/* Header */}
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-cyan-500/15">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200/80 dark:border-cyan-500/15">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-950/70 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                    <div className="w-9 h-9 rounded-xl bg-cyan-100/70 dark:bg-cyan-950/70 border border-cyan-200 dark:border-cyan-500/30 flex items-center justify-center text-cyan-700 dark:text-cyan-400 group-hover:scale-110 transition-transform">
                       <Icon className="w-4 h-4" />
                     </div>
                     <div>
-                      <h3 className="text-base font-bold text-slate-100 font-display group-hover:text-cyan-300 transition-colors">
+                      <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 font-display group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
                         {category.title}
                       </h3>
-                      <span className="text-[10px] font-mono text-slate-400">
+                      <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">
                         {category.skills.length} Technologies
                       </span>
                     </div>
@@ -88,9 +88,9 @@ export default function SkillsSection() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-cyan-950/40 border border-slate-800 hover:border-cyan-500/30 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100/80 dark:bg-slate-900/90 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-slate-800 hover:border-cyan-400 dark:hover:border-cyan-500/30 text-xs font-mono text-slate-700 dark:text-slate-300 hover:text-cyan-800 dark:hover:text-cyan-300 transition-all duration-200"
                     >
-                      <CheckCircle2 className="w-3 h-3 text-cyan-400/80 shrink-0" />
+                      <CheckCircle2 className="w-3 h-3 text-cyan-600 dark:text-cyan-400 shrink-0" />
                       <span>{skill}</span>
                     </span>
                   ))}
@@ -98,9 +98,9 @@ export default function SkillsSection() {
               </div>
 
               {/* Status footer line */}
-              <div className="pt-4 mt-5 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <div className="pt-4 mt-5 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
                 <span>PRODUCTION-VERIFIED</span>
-                <span className="text-cyan-400 font-semibold">100% PROFICIENT</span>
+                <span className="text-cyan-700 dark:text-cyan-400 font-semibold">100% PROFICIENT</span>
               </div>
             </motion.div>
           );
@@ -109,4 +109,3 @@ export default function SkillsSection() {
     </div>
   );
 }
-

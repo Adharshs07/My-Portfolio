@@ -42,13 +42,13 @@ export default function SectionHeading({
           isCenter ? 'justify-center' : ''
         )}
       >
-        <span className="font-mono text-xs uppercase tracking-widest text-cyan-300 px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">
+        <span className="font-mono text-xs uppercase tracking-widest text-cyan-800 dark:text-cyan-300 px-2.5 py-0.5 rounded bg-cyan-100/70 dark:bg-cyan-950/60 border border-cyan-300/60 dark:border-cyan-500/30 font-semibold">
           {number}
         </span>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 font-mono">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700 dark:text-cyan-400 font-mono">
           {category}
         </span>
-        <div className="h-px w-10 bg-gradient-to-r from-cyan-400 to-transparent" />
+        <div className="h-px w-10 bg-gradient-to-r from-cyan-500 to-transparent" />
       </motion.div>
 
       {/* Main Section Title */}
@@ -57,7 +57,7 @@ export default function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100 leading-[1.15]"
+        className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-[1.15]"
       >
         {title}
       </motion.h2>
@@ -70,7 +70,7 @@ export default function SectionHeading({
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className={cn(
-            'mt-3.5 text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed',
+            'mt-3.5 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed',
             isCenter ? 'mx-auto' : ''
           )}
         >

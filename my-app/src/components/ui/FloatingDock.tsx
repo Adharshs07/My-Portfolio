@@ -61,17 +61,17 @@ function DockIcon({
       onMouseLeave={() => setHovered(false)}
       aria-label={item.name}
       className={cn(
-        'relative rounded-full flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 group cursor-pointer',
+        'relative rounded-full flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 group cursor-pointer shadow-xs',
         isActive
-          ? 'bg-cyan-500 text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.7)]'
-          : 'bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
+          ? 'bg-cyan-500 text-slate-950 shadow-[0_0_20px_rgba(6,182,212,0.6)]'
+          : 'bg-white/90 dark:bg-slate-900/90 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800'
       )}
     >
       {/* Active Glowing Ring */}
       {isActive && (
         <motion.span
           layoutId="activeDockGlow"
-          className="absolute -inset-1 rounded-full border border-cyan-400/60 pointer-events-none"
+          className="absolute -inset-1 rounded-full border border-cyan-500/70 dark:border-cyan-400/60 pointer-events-none"
           transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
         />
       )}
@@ -86,7 +86,7 @@ function DockIcon({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 5, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-slate-900/95 border border-cyan-500/30 text-[11px] font-mono font-medium text-cyan-300 shadow-xl whitespace-nowrap pointer-events-none z-50 backdrop-blur-sm"
+            className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-cyan-500/30 text-[11px] font-mono font-medium text-cyan-800 dark:text-cyan-300 shadow-xl whitespace-nowrap pointer-events-none z-50 backdrop-blur-sm"
           >
             {item.name}
           </motion.div>
@@ -113,7 +113,7 @@ export default function FloatingDock({
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
         className="glass-dock flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full"
@@ -131,4 +131,3 @@ export default function FloatingDock({
     </div>
   );
 }
-

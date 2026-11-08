@@ -25,7 +25,7 @@ export function MovingBorderButton({
   return (
     <Component
       className={cn(
-        'relative p-[1px] overflow-hidden rounded-full inline-flex items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400',
+        'relative p-[1.5px] overflow-hidden rounded-full inline-flex items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 shadow-sm',
         containerClassName
       )}
       {...props}
@@ -33,7 +33,7 @@ export function MovingBorderButton({
       {/* Moving gradient border layer */}
       <span
         className={cn(
-          'absolute inset-[-1000%] animate-moving-border bg-[conic-gradient(from_90deg_at_50%_50%,#22d3ee_0%,#3b82f6_50%,#8b5cf6_100%)] opacity-80 group-hover:opacity-100 transition-opacity',
+          'absolute inset-[-1000%] animate-moving-border bg-[conic-gradient(from_90deg_at_50%_50%,#06b6d4_0%,#3b82f6_50%,#8b5cf6_100%)] opacity-80 group-hover:opacity-100 transition-opacity',
           borderClassName
         )}
       />
@@ -41,7 +41,7 @@ export function MovingBorderButton({
       {/* Button content */}
       <span
         className={cn(
-          'relative z-10 inline-flex items-center justify-center w-full h-full px-6 py-2.5 rounded-full bg-[#0b1220] text-sm font-semibold text-slate-100 backdrop-blur-3xl group-hover:bg-[#101827] transition-colors',
+          'relative z-10 inline-flex items-center justify-center w-full h-full px-6 py-2.5 rounded-full bg-white dark:bg-[#0b1220] text-sm font-semibold text-slate-800 dark:text-slate-100 backdrop-blur-3xl group-hover:bg-slate-50 dark:group-hover:bg-[#101827] transition-colors',
           className
         )}
       >
@@ -50,4 +50,3 @@ export function MovingBorderButton({
     </Component>
   );
 }
-

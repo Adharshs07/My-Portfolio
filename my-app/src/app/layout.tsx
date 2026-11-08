@@ -44,6 +44,24 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth antialiased" suppressHydrationWarning>
       <head>
+        {/* Instant theme resolver before paint to prevent flashing */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (isDark) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -51,7 +69,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#050816] text-[#F1F5F9] selection:bg-cyan-500/30 selection:text-white overflow-x-hidden min-h-screen relative">
+      <body className="bg-[#f8fafc] dark:bg-[#050816] text-[#0f172a] dark:text-[#F1F5F9] selection:bg-cyan-500/30 selection:text-white overflow-x-hidden min-h-screen relative transition-colors duration-300">
         {children}
       </body>
     </html>

@@ -26,17 +26,17 @@ export function TracingBeam({ children, className }: TracingBeamProps) {
   return (
     <div ref={ref} className={cn('relative w-full max-w-5xl mx-auto', className)}>
       {/* Vertical beam line */}
-      <div className="absolute -left-2 sm:left-4 md:left-6 top-3 bottom-3 w-[2px] bg-slate-800 rounded-full">
+      <div className="absolute -left-2 sm:left-4 md:left-6 top-3 bottom-3 w-[2px] bg-slate-300/80 dark:bg-slate-800 rounded-full transition-colors duration-300">
         {/* Luminous Animated Fill */}
         <motion.div
           style={{ height }}
-          className="w-full bg-gradient-to-b from-cyan-400 via-blue-500 to-violet-500 shadow-[0_0_15px_rgba(34,211,238,0.8)]"
+          className="w-full bg-gradient-to-b from-cyan-500 via-blue-500 to-violet-500 shadow-[0_0_15px_rgba(6,182,212,0.8)]"
         />
 
         {/* Glow point */}
         <motion.div
           style={{ top: height }}
-          className="absolute -left-[5px] -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-cyan-300 shadow-[0_0_15px_3px_rgba(34,211,238,0.9)] border-2 border-[#050816]"
+          className="absolute -left-[5px] -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-cyan-400 dark:bg-cyan-300 shadow-[0_0_15px_3px_rgba(6,182,212,0.9)] border-2 border-[#f8fafc] dark:border-[#050816] transition-colors duration-300"
         />
       </div>
 
@@ -44,4 +44,3 @@ export function TracingBeam({ children, className }: TracingBeamProps) {
     </div>
   );
 }
-
