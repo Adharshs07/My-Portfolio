@@ -14,6 +14,7 @@ export interface Project {
 export interface SkillCategory {
   title: string;
   skills: string[];
+  icon?: string;
 }
 
 export interface EducationItem {
@@ -22,6 +23,37 @@ export interface EducationItem {
   period: string;
   location: string;
   description?: string;
+}
+
+export interface ExperienceItem {
+  id: string;
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  type: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
+}
+
+export interface ServiceItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  deliverables: string[];
+  technologies: string[];
+  icon: string;
+}
+
+export interface PortfolioMetric {
+  id: string;
+  value: number;
+  suffix: string;
+  label: string;
+  description: string;
+  accent: 'cyan' | 'blue' | 'violet';
 }
 
 export interface SocialLink {
@@ -41,4 +73,7 @@ export interface PersonalInfo {
   githubUrl: string;
   leetcodeUrl: string;
   location: string;
+  bioShort?: string;
+  bioDetailed?: string[];
+  resumeUrl?: string;
 }

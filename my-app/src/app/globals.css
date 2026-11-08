@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
-@variant dark (&:where(.dark, .dark *));
-
 @layer base {
   :root {
-    --bg-page: #fbfbf9;
-    --bg-paper: #ffffff;
-    --bg-subtle: #f3f3ee;
-    --text-primary: #121214;
-    --text-secondary: #57575f;
-    --text-muted: #8c8c96;
-    --border-hairline: rgba(18, 18, 20, 0.08);
-    --border-medium: rgba(18, 18, 20, 0.16);
+    --bg-page: #050816;
+    --bg-secondary: #0b1220;
+    --bg-card: #101827;
+    --bg-card-hover: #162032;
+    --accent-cyan: #22d3ee;
+    --accent-blue: #3b82f6;
+    --accent-violet: #8b5cf6;
+    --text-primary: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --border-subtle: rgba(148, 163, 184, 0.12);
+    --border-accent: rgba(34, 211, 238, 0.25);
     --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-hero-name: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
     --font-hero-rounded: 'Outfit', 'Plus Jakarta Sans', sans-serif;
@@ -19,49 +21,33 @@
     --font-mono: 'JetBrains Mono', monospace;
   }
 
-  html.dark {
-    --bg-page: #0a0a0c;
-    --bg-paper: #141417;
-    --bg-subtle: #1c1c22;
-    --text-primary: #f4f4f6;
-    --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
-    --border-hairline: rgba(255, 255, 255, 0.08);
-    --border-medium: rgba(255, 255, 255, 0.16);
-  }
-
   * {
     box-sizing: border-box;
-    border-color: var(--border-hairline);
+    border-color: var(--border-subtle);
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg-page);
-    color: var(--text-primary);
+    background-color: #050816;
+    color: #f1f5f9;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    color-scheme: dark;
   }
 
   body {
     margin: 0;
     min-height: 100vh;
-    background-color: var(--bg-page);
-    color: var(--text-primary);
+    background-color: #050816;
+    color: #f1f5f9;
     font-family: var(--font-sans);
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
-    background-color: #121214;
-    color: #fbfbf9;
-  }
-
-  html.dark ::selection {
-    background-color: #f4f4f6;
-    color: #0a0a0c;
+    background-color: rgba(34, 211, 238, 0.35);
+    color: #ffffff;
   }
 }
 
@@ -82,202 +68,102 @@
   font-family: var(--font-mono);
 }
 
-/* Custom Outlined Text Utilities */
-.text-stroke-black {
-  -webkit-text-stroke: 2px #121214;
-  color: transparent;
+/* Custom Midnight Cyan Glow & Gradient Utilities */
+.text-glow-cyan {
+  text-shadow: 0 0 24px rgba(34, 211, 238, 0.45);
 }
 
-@media (min-width: 768px) {
-  .text-stroke-black {
-    -webkit-text-stroke: 3px #121214;
-    color: transparent;
-  }
+.text-glow-blue {
+  text-shadow: 0 0 24px rgba(59, 130, 246, 0.45);
 }
 
-@media (min-width: 1280px) {
-  .text-stroke-black {
-    -webkit-text-stroke: 3.5px #121214;
-    color: transparent;
-  }
+.box-glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(34, 211, 238, 0.2), 0 0 15px -3px rgba(34, 211, 238, 0.15);
 }
 
-/* Thick Black Outline & Grey and White Mix Color Gradient */
-.hero-name-stroke-back {
-  -webkit-text-stroke: 4.5px #121214;
-  color: #121214;
-  paint-order: stroke fill;
-  stroke-linejoin: round;
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.2));
+.box-glow-subtle {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(148, 163, 184, 0.1);
 }
 
-@media (min-width: 768px) {
-  .hero-name-stroke-back {
-    -webkit-text-stroke: 6.5px #121214;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero-name-stroke-back {
-    -webkit-text-stroke: 8px #121214;
-  }
-}
-
-html.dark .hero-name-stroke-back {
-  -webkit-text-stroke: 4.5px #0a0a0c;
-  color: #0a0a0c;
-  filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.6));
-}
-
-@media (min-width: 768px) {
-  html.dark .hero-name-stroke-back {
-    -webkit-text-stroke: 6.5px #0a0a0c;
-  }
-}
-
-@media (min-width: 1280px) {
-  html.dark .hero-name-stroke-back {
-    -webkit-text-stroke: 8px #0a0a0c;
-  }
-}
-
-.hero-name-fill-front {
+.hero-title-cyan-gradient {
   background-image: linear-gradient(
-    180deg,
+    135deg,
     #ffffff 0%,
-    #ffffff 38%,
-    #e2e4e9 62%,
-    #9ca3af 82%,
-    #6b7280 100%
+    #e2e8f0 30%,
+    #a5f3fc 60%,
+    #22d3ee 80%,
+    #38bdf8 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Monochromatic Blackish-Greyish-Whiteish Gradient matching grayscale portrait & light canvas */
-.hero-name-monochrome {
+.hero-accent-gradient {
   background-image: linear-gradient(
-    170deg,
-    #121214 0%,
-    #27272a 20%,
-    #52525b 45%,
-    #71717a 65%,
-    #a1a1aa 80%,
-    #d4d4d8 92%,
-    #fafaf9 100%
+    135deg,
+    #22d3ee 0%,
+    #3b82f6 50%,
+    #8b5cf6 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  -webkit-text-stroke: 1.2px rgba(18, 18, 20, 0.3);
-  paint-order: stroke fill;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.12));
 }
 
-@media (min-width: 768px) {
-  .hero-name-monochrome {
-    -webkit-text-stroke: 1.8px rgba(18, 18, 20, 0.35);
-  }
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(16, 24, 39, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.14);
 }
 
-@media (min-width: 1280px) {
-  .hero-name-monochrome {
-    -webkit-text-stroke: 2.2px rgba(18, 18, 20, 0.38);
-  }
+.glass-panel-glow {
+  background: rgba(16, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  box-shadow: 0 0 25px -5px rgba(34, 211, 238, 0.12);
 }
 
-/* Eye-Catching Multi-Stop Luminous Gradient for Hero Name (Indigo / Electric Cyan) */
-.hero-name-gradient {
-  background-image: linear-gradient(
-    125deg,
-    #0f172a 0%,
-    #1e1b4b 18%,
-    #4338ca 38%,
-    #6366f1 56%,
-    #8b5cf6 72%,
-    #0ea5e9 88%,
-    #06b6d4 100%
-  );
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: heroTextGlow 10s ease-in-out infinite alternate;
-  filter: drop-shadow(0 12px 32px rgba(99, 102, 241, 0.22));
+.glass-dock {
+  background: rgba(11, 18, 32, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(34, 211, 238, 0.15);
 }
 
-/* Alternative Palette: Sunset Ember & Coral Gold */
-.hero-name-sunset {
-  background-image: linear-gradient(
-    125deg,
-    #18181b 0%,
-    #701a75 22%,
-    #be185d 44%,
-    #f43f5e 65%,
-    #f97316 84%,
-    #fbbf24 100%
-  );
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: heroTextGlow 10s ease-in-out infinite alternate;
-  filter: drop-shadow(0 12px 32px rgba(244, 63, 94, 0.22));
+/* Grid & Dots */
+.bg-grid-cyber {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
 }
 
-/* Alternative Palette: Liquid Platinum & Titanium Chrome */
-.hero-name-chrome {
-  background-image: linear-gradient(
-    180deg,
-    #0f172a 0%,
-    #334155 30%,
-    #94a3b8 50%,
-    #475569 70%,
-    #0f172a 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 10px 24px rgba(15, 23, 42, 0.15));
+.bg-dot-cyber {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(34, 211, 238, 0.12) 1px, transparent 1px);
 }
 
-@keyframes heroTextGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-name-gradient {
-    animation: none;
-    background-position: 40% 50%;
-  }
+::-webkit-scrollbar-track {
+  background: #050816;
 }
 
-/* Thick Black Outline with White Fill for Hero Name */
-.hero-name-outlined {
-  color: #ffffff;
-  -webkit-text-stroke: 2.5px #121214;
-  paint-order: stroke fill;
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
 }
 
-@media (min-width: 768px) {
-  .hero-name-outlined {
-    -webkit-text-stroke: 3.5px #121214;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero-name-outlined {
-    -webkit-text-stroke: 4.5px #121214;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #22d3ee;
 }
 
 /* 3D Perspective Utilities */
@@ -289,14 +175,6 @@ html.dark .hero-name-stroke-back {
   perspective: 1000px;
 }
 
-.perspective-1200 {
-  perspective: 1200px;
-}
-
-.perspective-1500 {
-  perspective: 1500px;
-}
-
 .preserve-3d {
   transform-style: preserve-3d;
 }
@@ -305,190 +183,18 @@ html.dark .hero-name-stroke-back {
   backface-visibility: hidden;
 }
 
-/* Subtle Architectural Grid Lines & Noise */
-.bg-grid-subtle {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(18, 18, 20, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(18, 18, 20, 0.03) 1px, transparent 1px);
+/* Aceternity Moving Border Animation Keyframes */
+@keyframes movingBorderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.bg-dot-subtle {
-  background-size: 24px 24px;
-  background-image: radial-gradient(circle, rgba(18, 18, 20, 0.06) 1px, transparent 1px);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background: #fbfbf9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d4d4d8;
-  border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a1a1aa;
-}
-
-/* ==========================================================================
-   Interactive Floating Glass Spheres
-   Visible, sophisticated grayish-glass aesthetic with distinct silver-graphite
-   rims, volumetric gradient shading, inner refraction highlights, and shadows.
-   ========================================================================== */
-
-.glass-sphere {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  user-select: none;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-
-  /* Delicate 3D volumetric glass refraction on warm off-white */
-  background: radial-gradient(
-    circle at 35% 28%,
-    rgba(255, 255, 255, 0.75) 0%,
-    rgba(225, 228, 233, 0.18) 22%,
-    rgba(170, 175, 185, 0.24) 52%,
-    rgba(125, 130, 140, 0.28) 78%,
-    rgba(90, 95, 105, 0.42) 100%
-  );
-
-  /* Visible outer rim and optical refraction depth */
-  border: 1px solid rgba(90, 95, 105, 0.38);
-  box-shadow:
-    inset 2px 3px 8px rgba(255, 255, 255, 0.8),
-    inset -3px -4px 10px rgba(40, 45, 55, 0.2),
-    0 12px 28px rgba(40, 45, 55, 0.1),
-    0 4px 10px rgba(40, 45, 55, 0.04);
-}
-
-/* Foreground Spheres: Crisp, high-contrast graphite rim & deep refraction */
-.glass-sphere-foreground {
-  border: 1.2px solid rgba(80, 85, 96, 0.45);
-  box-shadow:
-    inset 2.5px 3.5px 10px rgba(255, 255, 255, 0.9),
-    inset -4px -5px 12px rgba(35, 40, 50, 0.25),
-    0 16px 36px rgba(35, 40, 50, 0.12),
-    0 6px 14px rgba(35, 40, 50, 0.06);
-}
-
-/* Midground Spheres: Balanced silver-gray tone */
-.glass-sphere-midground {
-  border: 1px solid rgba(95, 100, 110, 0.34);
-  box-shadow:
-    inset 2px 3px 7px rgba(255, 255, 255, 0.75),
-    inset -3px -3px 8px rgba(45, 50, 60, 0.16),
-    0 10px 24px rgba(40, 45, 55, 0.08),
-    0 3px 8px rgba(40, 45, 55, 0.03);
-}
-
-/* Distant Spheres: Softer tone with subtle depth haze */
-.glass-sphere-distant {
-  border: 1px solid rgba(110, 115, 125, 0.28);
-  box-shadow:
-    inset 1.5px 2px 5px rgba(255, 255, 255, 0.65),
-    inset -2px -2px 6px rgba(50, 55, 65, 0.12),
-    0 6px 16px rgba(40, 45, 55, 0.06);
-}
-
-/* Primary Specular Light Glint (Upper-Left Oval Reflection) */
-.glass-sphere::before {
-  content: '';
-  position: absolute;
-  top: 13%;
-  left: 18%;
-  width: 28%;
-  height: 18%;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.5) 45%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(-35deg);
-  pointer-events: none;
-}
-
-/* Secondary Ambient Ground Reflection (Lower-Right Crescent) */
-.glass-sphere::after {
-  content: '';
-  position: absolute;
-  bottom: 11%;
-  right: 16%;
-  width: 34%;
-  height: 16%;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 255, 255, 0.45) 0%,
-    rgba(225, 228, 233, 0.15) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(-30deg);
-  pointer-events: none;
-}
-
-/* Dark Mode Spheres */
-html.dark .glass-sphere {
-  background: radial-gradient(
-    circle at 35% 28%,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(140, 145, 160, 0.1) 22%,
-    rgba(60, 65, 75, 0.25) 52%,
-    rgba(30, 35, 45, 0.38) 78%,
-    rgba(15, 18, 24, 0.55) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow:
-    inset 2px 3px 8px rgba(255, 255, 255, 0.35),
-    inset -3px -4px 10px rgba(0, 0, 0, 0.5),
-    0 14px 34px rgba(0, 0, 0, 0.45),
-    0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-html.dark .glass-sphere-foreground {
-  border: 1.2px solid rgba(255, 255, 255, 0.22);
-  box-shadow:
-    inset 2.5px 3.5px 10px rgba(255, 255, 255, 0.45),
-    inset -4px -5px 12px rgba(0, 0, 0, 0.6),
-    0 18px 42px rgba(0, 0, 0, 0.55),
-    0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-html.dark .glass-sphere-midground {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow:
-    inset 2px 3px 7px rgba(255, 255, 255, 0.3),
-    inset -3px -3px 8px rgba(0, 0, 0, 0.45),
-    0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-html.dark .glass-sphere-distant {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    inset 1.5px 2px 5px rgba(255, 255, 255, 0.2),
-    inset -2px -2px 6px rgba(0, 0, 0, 0.35),
-    0 8px 18px rgba(0, 0, 0, 0.25);
-}
-
-html.dark ::-webkit-scrollbar-track {
-  background: #0a0a0c;
-}
-
-html.dark ::-webkit-scrollbar-thumb {
-  background: #27272a;
-}
-
-html.dark ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+.animate-moving-border {
+  animation: movingBorderSpin 4s linear infinite;
 }
 
 /* Reduced Motion Respect */
