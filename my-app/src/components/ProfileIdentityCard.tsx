@@ -119,10 +119,10 @@ export default function ProfileIdentityCard() {
       <div className="mb-5">
         <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1.5 font-medium">
           <Code2 className="w-3 h-3 text-cyan-600 dark:text-cyan-400" />
-          <span>Core Engineering Focus</span>
+          <span>WHAT I BUILD</span>
         </div>
         <div className="flex flex-wrap gap-1.5">
-          {['Clean Architecture', 'Next.js 16', 'Node.js Microservices', 'Socket.IO & WebRTC'].map((tag) => (
+          {['Full-Stack Applications', 'Scalable REST APIs', 'Real-Time Applications', 'AI-Integrated Solutions'].map((tag) => (
             <span
               key={tag}
               className="px-2.5 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200/80 dark:border-cyan-500/20 text-[10px] font-mono text-cyan-800 dark:text-cyan-300 font-medium"

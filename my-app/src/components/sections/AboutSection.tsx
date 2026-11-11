@@ -4,8 +4,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { PERSONAL_INFO } from '@/data/portfolioData';
-import { GraduationCap, Code2, Cpu, CheckCircle, Terminal, HeartHandshake } from 'lucide-react';
+import { GraduationCap, Code2, Cpu, CheckCircle, Terminal, HeartHandshake, Brain, MessageCircle, Computer, GraphStar, ArrowUp, ArrowUp01, ArrowUpFromLine, LucideArrowDownUp, LucideWavesArrowDown, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import { ArrowUpAzIcon } from 'lucide-react/dist/lucide-react.suffixed.js';
 
 interface AboutSectionProps {
   onNavigate?: (sectionId: string) => void;
@@ -16,9 +17,9 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       <SectionHeading
         number="02"
-        category="Profile & Origin"
-        title="Engineering Resilient Systems from Analytical Roots"
-        subtitle="The journey of an analytical mind transitioning from literature and communication into full-stack software architecture."
+        category="Profile"
+        title="Driven by Curiosity, Built Through Code"
+        subtitle="A self-driven Full Stack Developer passionate about building scalable web applications, exploring modern technologies, and transforming ideas into practical digital solutions through continuous learning and hands-on development."
       />
 
       {/* Main Grid: Narrative Story + Interactive Philosophy Cards */}
@@ -57,34 +58,34 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
           {/* Core Values List */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/80 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
-              <Code2 className="w-5 h-5 text-cyan-600 dark:text-cyan-400 mb-2" />
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Clean Architecture & SOLID</h4>
+              <Brain className="w-5 h-5 text-cyan-600 dark:text-cyan-400 mb-2" />
+              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Clean Analytical & Problem-Solving</h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Domain business rules remain strictly decoupled from database engines, external frameworks, and delivery mechanisms.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/80 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
-              <Cpu className="w-5 h-5 text-blue-600 dark:text-blue-400 mb-2" />
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Type Safety & Determinism</h4>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                End-to-end TypeScript interfaces, DTO mappers, and runtime schema validation to eliminate null pointers and runtime traps.
+                Critical Thinking, Logical Reasoning, Decision Making, Debugging, Root Cause Analysis, Attention to Detail.
               </p>
             </div>
 
             <div className="p-5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/80 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
               <HeartHandshake className="w-5 h-5 text-violet-600 dark:text-violet-400 mb-2" />
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Communication & Empathy</h4>
+              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Communication & Collaboration</h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Strong communicative foundation translates to clear system documentation, transparent collaboration, and crisp API contracts.
+                Verbal Communication, Active Listening, Teamwork, Knowledge Sharing, Technical Documentation, Interpersonal Skills.
               </p>
             </div>
 
             <div className="p-5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/80 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
-              <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-2" />
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Production-Ready Mindset</h4>
+              <Computer className="w-5 h-5 text-violet-600 dark:text-violet-400 mb-2" />
+              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Professional Effectiveness</h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Proper error handling middlewares, logging, environment configuration, secure cookies, and automated deployments.
+                Time Management, Task Prioritization, Accountability, Ownership, Independent Working, Work Ethic.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/80 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
+              <TrendingUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-2" />
+              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Learning & Adaptability</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                Continuous Learning, Self-Motivation, Adaptability, Curiosity, Creative Thinking, Openness to Feedback.
               </p>
             </div>
           </div>
@@ -109,37 +110,59 @@ export default function AboutSection({ onNavigate }: AboutSectionProps) {
             <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100 font-display">{PERSONAL_INFO.name}</h4>
             <p className="text-xs font-mono text-cyan-700 dark:text-cyan-400 mt-0.5 font-medium">{PERSONAL_INFO.role}</p>
             <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 max-w-xs mx-auto">
-              Based in {PERSONAL_INFO.location}. Open to full-time developer positions, remote roles, and high-impact engineering projects.
+              Open to full-time opportunities, remote positions, and relocation. Eager to contribute to impactful projects, collaborate with engineering teams, and build scalable digital solutions.
             </p>
           </div>
 
           {/* Education & Training Quick Timeline */}
-          <div className="p-6 rounded-3xl glass-panel border border-slate-200 dark:border-slate-800 space-y-4">
-            <div className="flex items-center gap-2 pb-3 border-b border-slate-200 dark:border-slate-800 text-xs font-mono text-cyan-800 dark:text-cyan-300">
-              <GraduationCap className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
-              <span className="font-semibold uppercase tracking-wider">Credential Summary</span>
+
+          <div className="p-7 rounded-3xl glass-panel border border-slate-200 dark:border-slate-800 space-y-6">
+            <div className="flex items-center gap-2 pb-4 border-b border-slate-200 dark:border-slate-800 text-sm font-mono text-cyan-800 dark:text-cyan-300">
+              <GraduationCap className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+              <span className="font-semibold uppercase tracking-wider">
+                EDUCATION & TRAINING
+              </span>
             </div>
 
-            <div className="space-y-4 text-xs">
-              <div className="pl-4 border-l-2 border-cyan-500">
-                <span className="text-[10px] font-mono text-cyan-700 dark:text-cyan-300 font-semibold">2024 — 2026</span>
-                <h5 className="font-bold text-slate-900 dark:text-slate-200 mt-0.5">Professional Full Stack Immersion (MERN)</h5>
-                <p className="text-slate-600 dark:text-slate-400">Brototype • Trivandrum</p>
+            <div className="space-y-6 text-sm">
+              <div className="pl-5 border-l-2 border-cyan-500 py-1">
+                <span className="text-xs font-mono text-cyan-700 dark:text-cyan-300 font-semibold">
+                  2024 — 2026
+                </span>
+                <h5 className="text-base font-bold text-slate-900 dark:text-slate-200 mt-1">
+                  Professional Training – Full Stack Development (MERN)
+                </h5>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  Brototype
+                </p>
               </div>
 
-              <div className="pl-4 border-l-2 border-blue-500">
-                <span className="text-[10px] font-mono text-blue-700 dark:text-blue-300 font-semibold">2022 — 2024</span>
-                <h5 className="font-bold text-slate-900 dark:text-slate-200 mt-0.5">Master of Arts (M.A.) in English Literature</h5>
-                <p className="text-slate-600 dark:text-slate-400">AJ College • Kerala University</p>
+              <div className="pl-5 border-l-2 border-blue-500 py-1">
+                <span className="text-xs font-mono text-blue-700 dark:text-blue-300 font-semibold">
+                  2022 — 2024
+                </span>
+                <h5 className="text-base font-bold text-slate-900 dark:text-slate-200 mt-1">
+                  Master of Arts (M.A.) – English Language and Literature
+                </h5>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  AJ College of Science and Technology • Kerala University
+                </p>
               </div>
 
-              <div className="pl-4 border-l-2 border-violet-500">
-                <span className="text-[10px] font-mono text-violet-700 dark:text-violet-300 font-semibold">2019 — 2022</span>
-                <h5 className="font-bold text-slate-900 dark:text-slate-200 mt-0.5">Bachelor of Arts (B.A.) in English Communicative</h5>
-                <p className="text-slate-600 dark:text-slate-400">AJ College • Kerala University</p>
+              <div className="pl-5 border-l-2 border-violet-500 py-1">
+                <span className="text-xs font-mono text-violet-700 dark:text-violet-300 font-semibold">
+                  2019 — 2022
+                </span>
+                <h5 className="text-base font-bold text-slate-900 dark:text-slate-200 mt-1">
+                  Bachelor of Arts (B.A.) – English Communicative
+                </h5>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  AJ College of Science and Technology • Kerala University
+                </p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

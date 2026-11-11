@@ -21,7 +21,7 @@ export const PERSONAL_INFO: PersonalInfo = {
   leetcodeUrl: 'https://leetcode.com/u/SOWEzQH3XY/',
   location: 'Trivandrum, Kerala',
   bioShort:
-    'Full Stack Developer specializing in MERN Stack, Clean Architecture, real-time communications, and scalable distributed systems.',
+    'Full Stack Developer specializing in modern web technologies, Clean Architecture, scalable backend development, and real-time applications.  ',
   bioDetailed: [
     'My journey into software engineering is driven by a passionate obsession with building resilient digital systems. Coming from an academic background in English Language & Literature, I developed sharp analytical thinking, structured communication, and nuanced problem-solving skills.',
     'I transitioned into full-stack software development through an intensive, rigorous engineering program at Brototype. Over hundreds of hours of hands-on architectural design and code reviews, I focused on building production-grade web systems from the ground up.',
@@ -56,11 +56,11 @@ export const PORTFOLIO_METRICS: PortfolioMetric[] = [
     accent: 'violet',
   },
   {
-    id: 'clean-arch',
+    id: 'end-end',
     value: 100,
     suffix: '%',
-    label: 'Clean Architecture',
-    description: 'Strict adherence to SOLID principles, DTOs & Repository Pattern',
+    label: 'End-to-End Development',
+    description: 'Hands-on involvement across frontend, backend, database integration, and application deployment.',
     accent: 'cyan',
   },
 ];
@@ -104,12 +104,13 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       'React.js',
       'Next.js 15/16',
+      'JavaScript',
       'TypeScript',
       'Tailwind CSS',
       'Redux Toolkit',
       'Zustand',
       'HTML5 & Modern CSS3',
-      'Framer Motion',
+      'React Router',
     ],
   },
   {
@@ -121,16 +122,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       'JWT Authentication',
       'Socket.IO (Real-time)',
       'WebRTC (Video & Audio)',
-      'Clean Architecture',
-      'Dependency Injection',
     ],
   },
   {
-    title: 'Databases & ORM',
+    title: 'Databases',
     skills: [
       'MongoDB & Mongoose',
       'PostgreSQL',
-      'Prisma ORM',
+      'Prisma',
       'Firebase',
       'Geospatial Queries',
       'Indexing & Optimization',
@@ -143,10 +142,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       'Docker',
       'Nginx & Reverse Proxy',
       'PM2 Process Manager',
+      'pnpm',
       'Git & GitHub Actions',
       'Vercel',
       'Postman',
-      'Linux Server Admin',
+      'VS code',
+      'Figma',
     ],
   },
   {
@@ -176,9 +177,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 export const MAIN_PROJECTS: Project[] = [
   {
     id: 'nest-and-nail',
-    title: 'Nest & Nail',
+    title: 'Nest & Nail - Service Marketplace Platform',
     description:
-      'A production-grade full-stack home-service marketplace connecting verified service specialists with clients. Features real-time geospatial discovery, booking workflows, WebRTC video consultations, Socket.IO live messaging, and Razorpay escrow payments.',
+      'A full-stack home-service marketplace connecting clients with verified professionals. The platform provides location-based worker discovery, service scheduling, secure bookings, real-time messaging, WebRTC video consultations, Razorpay payments, and comprehensive worker verification.',
     technologies: [
       'Next.js',
       'React',
@@ -196,12 +197,22 @@ export const MAIN_PROJECTS: Project[] = [
       'PM2',
       'Certbot',
     ],
+
+
     highlights: [
-      'Architected following Clean Architecture principles: Domain, Application, and Infrastructure layers with strict Dependency Injection and DTOs.',
-      'Engineered geospatial worker discovery enabling radius-based proximity matching with live booking schedule validation.',
-      'Implemented WebSockets via Socket.IO for real-time chat and WebRTC peer-to-peer audio/video consultations.',
-      'Integrated Razorpay escrow checkout, digital wallet balances, transaction logs, and worker identity verification workflows.',
-      'Configured production cloud infrastructure on AWS EC2 with Nginx reverse proxy, PM2 process management, and Certbot SSL certificates.',
+      'Architected the backend using Clean Architecture, SOLID principles, Dependency Injection, DTOs, and Mappers across Domain, Application, and Infrastructure layers.',
+
+      'Implemented JWT authentication with HttpOnly cookies, OTP verification, Google OAuth, password recovery, and Role-Based Access Control (RBAC).',
+
+      'Engineered geospatial worker discovery with radius-based matching, availability management, time-slot scheduling, date blocking, and booking validation.',
+
+      'Developed real-time messaging using Socket.IO and WebRTC video meetings with secure rooms and meeting time tracking.',
+
+      'Integrated Razorpay payments with signature verification, digital wallet transactions, transaction records, and payment workflows.',
+
+      'Built worker verification workflows, document uploads, service management, reviews, concerns, and real-time notifications.',
+
+      'Deployed the application using AWS EC2, AWS S3, Nginx reverse proxy, PM2 process management, Certbot SSL, and Vercel.',
     ],
     image: '',
     imageAlt: 'Nest & Nail — Production Home-Service Marketplace',
@@ -209,43 +220,59 @@ export const MAIN_PROJECTS: Project[] = [
     githubUrl: '',
     isMini: false,
   },
+
   {
     id: 'vintage-fashion',
-    title: 'Vintage Fashion',
+    title: 'Vintage Fashion - E-Commerce Platform',
+
     description:
-      'A full-stack fashion e-commerce ecosystem supporting high-concurrency catalog discovery, secure cart-to-checkout pipelines, inventory management, dynamic coupon discounting, and real-time customer support chat.',
+      'A full-stack fashion e-commerce platform supporting product discovery, secure payments, order management, and comprehensive admin operations.',
+
     technologies: [
       'React',
       'Node.js',
-      'Express',
+      'Express.js',
       'MongoDB',
       'JWT',
       'Razorpay',
       'Cloudinary',
       'Socket.IO',
       'Nodemailer',
-      'Google OAuth',
+      'Google OAuth'
     ],
+
     highlights: [
-      'Engineered structured MVC architecture with layered services, controllers, and validation middlewares.',
-      'Implemented secure authentication with HttpOnly JWT tokens, OTP verification via Nodemailer, and Google OAuth 2.0.',
-      'Developed Razorpay payment verification with automated webhooks, digital wallet refunds, and order delivery tracking.',
-      'Built a comprehensive administrative dashboard for real-time sales analytics, inventory adjustments, and discount coupon engines.',
+      'Architected the backend using MVC architecture with structured controllers, models, and services for maintainable application development.',
+
+      'Implemented secure user management with JWT authentication, OTP verification, Google OAuth, and Role-Based Access Control (RBAC).',
+
+      'Developed product management features including CRUD operations, product search, pagination, filtering, shopping cart, inventory management, customer reviews, coupons, and promotional offers.',
+
+      'Integrated Razorpay payment processing with payment verification, order tracking, order cancellation, and wallet-based refund workflows.',
+
+      'Built an administrative dashboard to manage users, products, orders, inventory, and discount coupons, with sales analytics for business operations.',
+
+      'Integrated Cloudinary for product image management and Socket.IO for real-time customer support chat.'
     ],
+
     image: '',
     imageAlt: 'Vintage Fashion — Full-Stack E-Commerce Platform',
     liveUrl: '',
     githubUrl: '',
-    isMini: false,
-  },
+    isMini: false
+  }
+
 ];
 
 export const MINI_PROJECTS: Project[] = [
+
   {
     id: 'adukkala',
-    title: 'Adukkala',
+    title: 'Adukkala - Full-Stack Recipe Application',
+
     description:
-      'A full-stack culinary recipe discovery and meal-planning application. Features complex recipe filtering, relational database schema, JWT auth, and custom user culinary collections.',
+      'A full-stack recipe discovery platform that allows users to explore recipes, search for meals, save favorites, and manage personalized recipe preferences through a responsive and user-friendly interface.',
+
     technologies: [
       'Next.js',
       'React',
@@ -254,42 +281,64 @@ export const MINI_PROJECTS: Project[] = [
       'PostgreSQL',
       'Prisma ORM',
       'Tailwind CSS',
+      'JWT Authentication',
+      'REST APIs'
     ],
+
     highlights: [
-      'Designed PostgreSQL schema with Prisma ORM for relational recipe bookmarking, category indexing, and user preferences.',
-      'Integrated third-party recipe intelligence APIs with client-side caching and dynamic search debounce.',
-      'Implemented secure JWT authentication and token verification middleware.',
+      'Designed and developed a full-stack recipe application using Next.js, React, Express.js, and TypeScript, with a responsive frontend built using Tailwind CSS.',
+
+      'Implemented secure JWT-based authentication to manage user registration, login, and protected application features.',
+
+      'Designed and managed relational database models using PostgreSQL and Prisma ORM to organize user data, saved recipes, and personalized preferences.',
+
+      'Developed RESTful APIs and integrated third-party recipe APIs to support recipe discovery, search functionality, favorites, and personalized recipe preferences.'
     ],
+
     image: '',
-    imageAlt: 'Adukkala — Recipe Discovery Application',
+    imageAlt: 'Adukkala — Full-Stack Recipe Application',
     liveUrl: '',
     githubUrl: '',
-    isMini: true,
+    isMini: true
   },
+
   {
     id: 'lenscard-aadhaar-ocr',
-    title: 'LensCard — Aadhaar OCR Engine',
+    title: 'LensCard - Aadhaar OCR Application',
+
     description:
-      'A privacy-first optical character recognition service that performs in-memory document preprocessing and structured data extraction from identity documents without persistent storage.',
+      'A full-stack Aadhaar OCR application that allows users to securely upload Aadhaar card images and automatically extract structured information through an intuitive interface.',
+
     technologies: [
       'React',
       'TypeScript',
       'Express.js',
       'Tailwind CSS',
+      'Clean Architecture',
+      'Dependency Injection',
       'Sharp',
       'Tesseract.js',
+      'Regex-Based Parsing'
     ],
+
     highlights: [
-      'Engineered in-memory image pipeline using Sharp for binarization, noise thresholding, and perspective normalization.',
-      'Implemented Tesseract OCR engine coupled with regex-driven heuristic parsing for high-accuracy identity extraction.',
-      'Strict zero-persistence security design ensuring sensitive personal documents are never written to disk or database.',
+      'Built a full-stack Aadhaar OCR application using React, TypeScript, Express.js, and Tailwind CSS, providing an intuitive interface for uploading Aadhaar card images and viewing extracted information.',
+
+      'Designed the backend using Clean Architecture and Dependency Injection to maintain separation of concerns and modular application components.',
+
+      'Implemented Sharp-based image preprocessing to prepare uploaded Aadhaar images for OCR extraction.',
+
+      'Integrated Tesseract OCR with regex-driven parsing to extract structured Aadhaar details from recognized text.',
+
+      'Implemented upload validation and in-memory image processing, ensuring uploaded documents are processed without persistent file or database storage.'
     ],
+
     image: '',
-    imageAlt: 'LensCard — Aadhaar OCR Engine',
+    imageAlt: 'LensCard — Aadhaar OCR Application',
     liveUrl: '',
     githubUrl: '',
-    isMini: true,
-  },
+    isMini: true
+  }
 ];
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [

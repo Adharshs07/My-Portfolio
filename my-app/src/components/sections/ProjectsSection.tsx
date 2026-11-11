@@ -76,9 +76,9 @@ function ProjectItemCard({ project, isFeatured = true }: { project: Project; isF
           <div className="space-y-2 mb-6 bg-slate-50/90 dark:bg-slate-900/60 p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800/80">
             <div className="text-[10px] font-mono uppercase tracking-wider text-cyan-800 dark:text-cyan-400 font-semibold mb-1 flex items-center gap-1.5">
               <Layers className="w-3 h-3" />
-              <span>Architectural Highlights</span>
+              <span>Architectural & Technical Highlights</span>
             </div>
-            {project.highlights.slice(0, isFeatured ? 4 : 3).map((item, idx) => (
+            {project.highlights.map((item, idx) => (
               <div key={idx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
                 <span className="text-cyan-600 dark:text-cyan-400 font-mono select-none mt-0.5">▸</span>
                 <span>{item}</span>

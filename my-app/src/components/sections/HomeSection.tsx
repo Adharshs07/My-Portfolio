@@ -29,7 +29,7 @@ export default function HomeSection({ onNavigate }: HomeSectionProps) {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-500 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
           </span>
-          <span>Available for Opportunities</span>
+          <span>Open to Work</span>
         </motion.div>
 
         {/* Hero Name with Monumental Typography & Cyber Gradient */}
@@ -66,7 +66,7 @@ export default function HomeSection({ onNavigate }: HomeSectionProps) {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="mt-4 max-w-2xl text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal"
         >
-          Engineering scalable web platforms, resilient distributed backend architectures, and high-performance digital experiences with strict Clean Architecture and modern TypeScript.
+          Building scalable web applications with modern JavaScript technologies, clean backend architecture, and performance-focused frontend experiences.
         </motion.p>
 
         {/* CTA Buttons (View Projects & Contact Me) */}
@@ -112,31 +112,31 @@ export default function HomeSection({ onNavigate }: HomeSectionProps) {
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 font-display tracking-tight leading-tight">
-              Production-Grade Reliability with <span className="hero-accent-gradient">Clean Architecture</span>
+              Building Scalable Applications Through <span className="hero-accent-gradient">Thoughtful Engineering</span>
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              I build enterprise-grade applications where domain business logic remains isolated and resilient to framework changes. From geospatial service dispatching to WebSockets and WebRTC, every layer is planned for scalability, testability, and zero runtime compromise.
+              I focus on building maintainable and scalable full-stack applications with well-structured backend architectures and responsive frontend experiences. I apply Clean Architecture and SOLID principles to keep business logic organized, while integrating real-time communication, secure authentication, payment systems, and cloud infrastructure to deliver complete application solutions.
             </p>
 
             {/* Quick 3 Value Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
               <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/70 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
                 <Code className="w-5 h-5 text-cyan-600 dark:text-cyan-400 mb-2" />
-                <h4 className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wide">SOLID & DTOs</h4>
-                <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1">Decoupled domain models and type safety.</p>
+                <h4 className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wide">ARCHITECTURE & DESIGN</h4>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1">Clean Architecture, SOLID principles, DTOs, Dependency Injection and Repository Pattern.</p>
               </div>
 
               <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/70 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
                 <Zap className="w-5 h-5 text-blue-600 dark:text-blue-400 mb-2" />
-                <h4 className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wide">Real-Time Core</h4>
-                <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1">Socket.IO WebSockets and WebRTC audio/video.</p>
+                <h4 className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wide">REAL-TIME SYSTEMS</h4>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1">Socket.IO communication, WebRTC video meetings and event-driven interactions.</p>
               </div>
 
               <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-[#0b1220]/70 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-all shadow-xs">
                 <ShieldCheck className="w-5 h-5 text-violet-600 dark:text-violet-400 mb-2" />
-                <h4 className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wide">Cloud & DevOps</h4>
-                <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1">AWS EC2, S3, Nginx proxy & PM2 orchestration.</p>
+                <h4 className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wide">CLOUD & DEPLOYMENT</h4>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1">AWS EC2, S3, Nginx, PM2, SSL configuration and Vercel deployments.</p>
               </div>
             </div>
 

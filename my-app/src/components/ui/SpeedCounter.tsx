@@ -69,13 +69,13 @@ export default function SpeedCounter() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
           </span>
           <span className="tracking-wider uppercase font-semibold text-slate-800 dark:text-slate-200">
-            System Telemetry & Authentic Metrics
+            Development Metrics
           </span>
         </div>
         <div className="hidden sm:flex items-center gap-3 text-slate-500 dark:text-slate-400">
-          <span>VELOCITY: 60 FPS</span>
+          <span>DEVELOPMENT MODE: ACTIVE • FOCUS: FULL STACK</span>
           <span>•</span>
-          <span className="text-cyan-700 dark:text-cyan-400 font-semibold">STATUS: OPERATIONAL</span>
+            {/* <span className="text-cyan-700 dark:text-cyan-400 font-semibold">STATUS: OPERATIONAL</span> */}
         </div>
       </div>
 
