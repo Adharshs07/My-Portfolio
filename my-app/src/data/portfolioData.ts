@@ -341,32 +341,28 @@ export const MINI_PROJECTS: Project[] = [
   }
 ];
 
+
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: 'freelance',
     title: 'Independent Full Stack Developer',
     company: 'Freelance & Contract Engineering',
     period: '2025 — Present',
-    location: 'Remote / Trivandrum',
+    location: 'Remote',
     type: 'Client & Independent Product Development',
     description:
-      'Architecting bespoke digital platforms, responsive web applications, and backend integration layers for clients and independent projects.',
+      'Building full-stack web applications, responsive digital platforms, and backend solutions for independent projects and client requirements.',
     highlights: [
-      'Translating product specifications into performant, modern Next.js and MERN stack implementations.',
-      'Designing clean database schemas, secure authentication flows, and payment gateway checkouts.',
-      'Providing end-to-end deployment, DNS configuration, and performance optimization for web platforms.',
+      'Developing responsive web applications using Next.js, React, TypeScript, and modern frontend technologies.',
+      'Designing modular backend architectures, RESTful APIs, database schemas, and secure authentication workflows using Node.js, Express.js, and MongoDB.',
+      'Integrating third-party services, payment gateways, and application features to deliver complete full-stack solutions.',
+      'Managing application deployment, server configuration, DNS setup, and performance optimization across hosting environments.',
     ],
     technologies: [
-      'Next.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'Node.js',
-      'MongoDB',
-      'REST APIs',
-      'Razorpay',
     ],
   },
 ];
+
 
 export const SERVICES_DATA: ServiceItem[] = [
   {

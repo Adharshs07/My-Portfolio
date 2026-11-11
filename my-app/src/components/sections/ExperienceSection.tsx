@@ -53,8 +53,8 @@ export default function ExperienceSection() {
                       <span>{item.period}</span>
                     </div>
                     <div className="flex items-center gap-1.5 mt-1 text-slate-500 dark:text-slate-400">
-                      <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-500" />
-                      <span>{item.location}</span>
+                      {/* <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-500" /> */}
+                      {/* <span>{item.location}</span> */}
                     </div>
                   </div>
                 </div>
