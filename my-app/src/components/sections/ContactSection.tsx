@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { PERSONAL_INFO } from '@/data/portfolioData';
-import { Mail, Copy, Check, ArrowUpRight, Send, FileText, CheckCircle2 } from 'lucide-react';
+import { Mail, Copy, Check, ArrowUpRight, Send, FileText, CheckCircle2, AlertCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, LeetCodeIcon, PhoneIcon } from '@/components/ui/Icons';
 
 export default function ContactSection() {
@@ -17,6 +17,7 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -24,20 +25,31 @@ export default function ContactSection() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
       setIsSubmitted(true);
-      const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(
-        formState.subject || 'Portfolio Inquiry'
-      )}&body=${encodeURIComponent(
-        `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
-      )}`;
-      window.open(mailtoUrl, '_blank');
-    }, 800);
+      setFormState({ name: '', email: '', subject: '', message: '' });
+    } catch (err: unknown) {
+      setSubmitError(err instanceof Error ? err.message : 'Failed to send message.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -189,9 +201,9 @@ export default function ContactSection() {
                 <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h5 className="text-base font-bold text-emerald-800 dark:text-emerald-300">Message Dispatched!</h5>
+                <h5 className="text-base font-bold text-emerald-800 dark:text-emerald-300">Message Sent!</h5>
                 <p className="text-xs text-slate-600 dark:text-slate-300 max-w-sm mx-auto">
-                  Thank you for reaching out. Your client opened with pre-filled details, and I will respond to your inquiry shortly.
+                  Thank you for reaching out. Your message has been delivered to my inbox and I will respond shortly.
                 </p>
                 <button
                   type="button"
@@ -260,13 +272,20 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {submitError && (
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-500/30 text-xs text-red-700 dark:text-red-300">
+                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-[0_0_25px_rgba(6,182,212,0.35)] active:scale-98 disabled:opacity-60 cursor-pointer"
                 >
                   {isSubmitting ? (
-                    <span>Preparing Message...</span>
+                    <span>Sending Message...</span>
                   ) : (
                     <>
                       <span>Transmit Message</span>
