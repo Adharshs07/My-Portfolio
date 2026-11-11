@@ -118,8 +118,8 @@ export default function ContactSection() {
 
               {/* Resume Download Action */}
               <a
-                href="/Adharsh-removebg-preview.png"
-                download="Adharsh_S_Resume"
+                href={PERSONAL_INFO.resumeUrl}
+                download="Adharsh_S_Resume.pdf"
                 className="w-full inline-flex items-center justify-between px-4 py-3 rounded-xl bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200/90 dark:border-cyan-500/30 hover:border-cyan-400 text-xs sm:text-sm font-mono text-cyan-800 dark:text-cyan-300 hover:text-cyan-900 dark:hover:text-cyan-200 transition-all shadow-xs"
               >
                 <div className="flex items-center gap-2.5">

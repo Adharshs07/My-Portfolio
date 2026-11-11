@@ -144,10 +144,10 @@ export default function ProfileIdentityCard() {
         </a>
 
         <a
-          href="/Adharsh-removebg-preview.png"
-          download="Adharsh_S_Profile"
+          href={PERSONAL_INFO.resumeUrl}
+          download="Adharsh_S_Resume.pdf"
           className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-white dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700/80 border border-slate-300 dark:border-cyan-500/20 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all hover:border-cyan-400/40 active:scale-95 shadow-xs"
-          title="Download Developer Profile"
+          title="Download Resume"
         >
           <FileText className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
           <span>Resume CV</span>

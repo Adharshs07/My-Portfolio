@@ -27,7 +27,7 @@ export const PERSONAL_INFO: PersonalInfo = {
     'I transitioned into full-stack software development through an intensive, rigorous engineering program at Brototype. Over hundreds of hours of hands-on architectural design and code reviews, I focused on building production-grade web systems from the ground up.',
     'I specialize in TypeScript, Next.js, Node.js, Express, MongoDB, PostgreSQL, and cloud deployments with AWS. My development ethos emphasizes Clean Architecture, SOLID principles, type safety, modular dependency injection, and deterministic state management.',
   ],
-  resumeUrl: '#',
+  resumeUrl: '/Adharsh_S_Resume.pdf',
 };
 
 export const PORTFOLIO_METRICS: PortfolioMetric[] = [
